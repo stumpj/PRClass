@@ -1,26 +1,26 @@
 package com.example.jim.testapp.Activities.Activities;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.jim.testapp.R;
 
-public class AnotherActivity extends ActionBarActivity {
+public class AnotherActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_another);
 
+        // Get the intent created by the parent activity
         Intent i = getIntent();
+        String txt = i.getStringExtra(MainActivity.INTENT_TAG_MAIN_TEXT);
 
-        String txt = i.getStringExtra(MainActivity.MAIN_TEXT);
-
+        //make sure data was pulled from the intent
         if (txt != null) {
+            //update the textview with the text passed via the intent
             TextView mytxt = (TextView) findViewById(R.id.another_txt_main);
             mytxt.setText(txt);
         }
@@ -28,25 +28,4 @@ public class AnotherActivity extends ActionBarActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_another, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
