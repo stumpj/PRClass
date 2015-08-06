@@ -16,7 +16,7 @@ public class AnotherActivity extends AppCompatActivity {
 
         // Get the intent created by the parent activity
         Intent i = getIntent();
-        String txt = i.getStringExtra(MainActivity.INTENT_TAG_MAIN_TEXT);
+        String txt = i.getStringExtra(IntentExample.INTENT_TAG_MAIN_TEXT);
 
         //make sure data was pulled from the intent
         if (txt != null) {

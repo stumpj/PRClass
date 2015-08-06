@@ -19,6 +19,37 @@
         <activity
             android:name=".Activities.Activities.AnotherActivity"
             android:label="@string/title_activity_another"
+            android:parentActivityName=".Activities.Activities.IntentExample" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jim.testapp.Activities.Activities.IntentExample" />
+        </activity>
+        <activity
+            android:name=".Activities.Activities.IntentExample"
+            android:label="@string/title_activity_intent_example" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jim.testapp.Activities.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.Activities.SPExample"
+            android:label="@string/title_activity_spexample"
+            android:parentActivityName=".Activities.Activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jim.testapp.Activities.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.Activities.SPActivity"
+            android:label="@string/title_activity_sp"
+            android:parentActivityName=".Activities.Activities.SPExample" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jim.testapp.Activities.Activities.SPExample" />
+        </activity>
+        <activity
+            android:name=".Activities.Activities.ListAdapterActivity"
+            android:label="@string/title_activity_list_adapter"
             android:parentActivityName=".Activities.Activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
